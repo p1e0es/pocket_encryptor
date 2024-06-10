@@ -1,1 +1,1 @@
-A tool for encrypt my password!
+A tiny tool for encrypt my password!
