@@ -65,11 +65,11 @@ def generate_config():
         print(f"nonce: {nonce_b64}")
 
 def help():
-    print("Usage: python3 main.py command\n")
-    print("command:\n")
-    print("--- gen (generate key, nonce, config file)\n")
-    print("--- find (find recorded information in config file)\n")
-    print("--- record (record new information to config file)\n")
+    print(f"Usage: python3 {sys.argv[0]} command")
+    print("command:")
+    print("--- gen : generate key, nonce, config file")
+    print("--- find : find recorded information in config file")
+    print("--- record : record new information to config file")
 
 # find recorded information
 def findInfo():
