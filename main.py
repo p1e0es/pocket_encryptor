@@ -53,9 +53,6 @@ def generate_config():
         init_data_bytes = init_data_json.encode()
         init_data_bytes_len = len(init_data_bytes)
         packed_data = struct.pack(f'I{init_data_bytes_len}s', init_data_bytes_len, init_data_bytes)
-        
-        # ozIdsCh+GtGIhM7JySi/fUqaIZCERbofrdiYluilRtU=
-        # W2JQT5IXUScyxZIWKXIutA==
 
         encrypt_data =  encrypt_chacha20(key_b64, nonce_b64, packed_data)
 
