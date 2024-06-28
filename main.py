@@ -53,8 +53,9 @@ def generate_config():
         init_data_bytes = init_data_json.encode()
         init_data_bytes_len = len(init_data_bytes)
         packed_data = struct.pack(f'I{init_data_bytes_len}s', init_data_bytes_len, init_data_bytes)
-
-        print(packed_data)
+        
+        # ozIdsCh+GtGIhM7JySi/fUqaIZCERbofrdiYluilRtU=
+        # W2JQT5IXUScyxZIWKXIutA==
 
         encrypt_data =  encrypt_chacha20(key_b64, nonce_b64, packed_data)
 
@@ -85,8 +86,14 @@ def findInfo():
             data_length = struct.unpack('I', decrypted_data[:4])[0]
             data = decrypted_data[4:4+data_length]
             data_json = json.loads(data)
-            print(data_length)
-            print(data_json)
+            # print(data_length)
+            # print(data_json)
+            print('All recorded information list:\n')
+            for item in data_json:
+                for k, v in item.items():
+                    print(f'{k}: {v}')
+                print('\n')
+
     else:
         print('config file not found!')
         
