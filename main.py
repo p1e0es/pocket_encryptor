@@ -136,6 +136,10 @@ def recordInfo():
         print('config file not found!')
 
 def main():
+    if len(sys.argv) != 2:
+        help()
+        exit(1)
+
     option = sys.argv[1]
 
     if option == "gen":
